@@ -34,8 +34,7 @@ if(isset($_REQUEST['btnUpdateUser'])){
 To reproduce the vulnerability, follow these steps:
 
 Step 1: Log in to the application as a standard, low-privileged user (e.g., Student). Note your current session cookie (PHPSESSID).
-> **Important Testing Note:** It is strongly recommended to use an **Incognito / Private window** or clear your previous browser cookies to ensure a fresh, isolated session cookie (`PHPSESSID`) is captured for the specific test account.
-
+> **Important Session Note:** Each user account must have its own distinct session. Ensure you use an **Incognito / Private window** or log out completely before switching accounts to capture a **different, unique `PHPSESSID`** for the target account. Do not reuse the same session cookie across multiple accounts, as separate accounts must have independent cookies.
 Step 2: Intercept the web traffic using a proxy tool like Burp Suite, or use cURL to send a crafted HTTP POST request to the administrative API endpoint. Inject usertype_id=1 into the body.
 
 Malicious HTTP Request:
