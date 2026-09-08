@@ -83,4 +83,4 @@ An attacker can completely compromise the application. They can access sensitive
 
 ## 7. Disclosure Timeline
 - Sep 09, 2026: Vulnerability discovered.
-- Sep 09, 2026: Public disclosure and CVE request submitted (Vendor unmaintained / unreachable).
+- Sep 09, 2026: Public disclosure and CVE request submitted (No contact details for the author could be located. Technical details and PoC are fully documented in the provided GitHub reference).
