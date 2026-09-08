@@ -34,6 +34,7 @@ if(isset($_REQUEST['btnUpdateUser'])){
 To reproduce the vulnerability, follow these steps:
 
 Step 1: Log in to the application as a standard, low-privileged user (e.g., Student). Note your current session cookie (PHPSESSID).
+> **Important Testing Note:** It is strongly recommended to use an **Incognito / Private window** or clear your previous browser cookies to ensure a fresh, isolated session cookie (`PHPSESSID`) is captured for the specific test account.
 
 Step 2: Intercept the web traffic using a proxy tool like Burp Suite, or use cURL to send a crafted HTTP POST request to the administrative API endpoint. Inject usertype_id=1 into the body.
 
@@ -63,8 +64,9 @@ Step 3: Send the request. The server will process the update and redirect you.
 
 Step 4: Refresh your browser. Your account role has now been successfully escalated to Administrator, granting you full control over the system's backend (managing exams, modifying other users, etc.).
 - Image of request & response:
-<img width="921" height="735" alt="Screenshot_30" src="https://github.com/user-attachments/assets/866f71f4-018c-4d51-9268-5247ea38a5f2" />
-<img width="922" height="780" alt="Screenshot_33" src="https://github.com/user-attachments/assets/96955d5a-f70a-4b20-afc8-02a7b789e3cb" />
+<img width="918" height="517" alt="Screenshot_34" src="https://github.com/user-attachments/assets/8e4e33b2-ecb8-4da5-8530-897727683eb3" />
+<img width="921" height="597" alt="Screenshot_35" src="https://github.com/user-attachments/assets/b3763267-3708-41a6-83e0-87213aecd8e8" />
+
 
 - Dashboard Admin Access :
 
