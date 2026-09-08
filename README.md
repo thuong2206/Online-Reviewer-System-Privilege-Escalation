@@ -82,5 +82,5 @@ An attacker can completely compromise the application. They can access sensitive
 - **Prevent Mass Assignment:** Separate the "Update Profile" feature for regular users from the "Manage Users" feature for Admins. Never accept or blindly bind the `usertype_id` parameter from HTTP requests in standard user profile updates.
 
 ## 7. Disclosure Timeline
-- Sep 08, 2026: Vulnerability discovered.
-- Sep 08, 2026: Public disclosure and CVE request submitted (Vendor unmaintained / unreachable).
+- Sep 09, 2026: Vulnerability discovered.
+- Sep 09, 2026: Public disclosure and CVE request submitted (Vendor unmaintained / unreachable).
