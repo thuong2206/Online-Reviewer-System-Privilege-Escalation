@@ -73,7 +73,8 @@ Step 4: Refresh your browser. Your account role has now been successfully escala
 Before 
 <img width="1919" height="559" alt="Screenshot_31" src="https://github.com/user-attachments/assets/e3437c55-3ad9-42e3-97da-2efb8eadd6e2" />
 After :
-<img width="1913" height="465" alt="Screenshot_32" src="https://github.com/user-attachments/assets/46aa9521-635a-4b4f-8401-471dd1fe9576" />
+<img width="1918" height="487" alt="Screenshot_36" src="https://github.com/user-attachments/assets/0866e38b-63ef-4b60-81f2-9f49fa8e8605" />
+
 
 ## 5. Impact
 An attacker can completely compromise the application. They can access sensitive data, manipulate exam questions, modify student grades, delete other users (including legitimate admins), and potentially achieve further exploitation depending on admin functionalities (e.g., File Upload leading to RCE).
