@@ -76,9 +76,9 @@ After :
 An attacker can completely compromise the application. They can access sensitive data, manipulate exam questions, modify student grades, delete other users (including legitimate admins), and potentially achieve further exploitation depending on admin functionalities (e.g., File Upload leading to RCE).
 
 ## 6. Remediation
-Implement Authorization Checks: The backend must explicitly verify that $_SESSION['usertype_id'] == 1 before allowing any role modification operations.
-
-Prevent Mass Assignment: Separate the "Update Profile" feature for regular users from the "Manage Users" feature for Admins. Do not accept the usertype_id parameter in standard profile updates.
+- **Enforce Endpoint Access Control:** Do not rely on hiding UI elements (Security through Obscurity). The application must enforce strict access controls at the file/routing level, ensuring that files within the `/admins/` directory cannot be directly accessed or executed by non-admin sessions.
+- **Implement Authorization Checks:** The backend must explicitly verify that `$_SESSION['usertype_id'] == 1` before processing any role modification logic inside `btn_functions.php`.
+- **Prevent Mass Assignment:** Separate the "Update Profile" feature for regular users from the "Manage Users" feature for Admins. Never accept or blindly bind the `usertype_id` parameter from HTTP requests in standard user profile updates.
 
 ## 7. Disclosure Timeline
 [Sep 08, 2026]: Vulnerability discovered.
