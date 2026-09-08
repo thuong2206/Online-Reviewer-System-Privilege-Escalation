@@ -28,8 +28,9 @@ if(isset($_REQUEST['btnUpdateUser'])){
     $stmt = "UPDATE users SET usertype_id = '$usertype_id', ... WHERE user_id = '$user_id' ";
     $conn->exec($stmt);
 }
+```
 
-4. Proof of Concept (PoC)
+## 4. Proof of Concept (PoC)
 To reproduce the vulnerability, follow these steps:
 
 Step 1: Log in to the application as a standard, low-privileged user (e.g., Student). Note your current session cookie (PHPSESSID).
@@ -67,15 +68,15 @@ Before
 After :
 <img width="1913" height="465" alt="Screenshot_32" src="https://github.com/user-attachments/assets/46aa9521-635a-4b4f-8401-471dd1fe9576" />
 
-5. Impact
+## 5. Impact
 An attacker can completely compromise the application. They can access sensitive data, manipulate exam questions, modify student grades, delete other users (including legitimate admins), and potentially achieve further exploitation depending on admin functionalities (e.g., File Upload leading to RCE).
 
-6. Remediation
+## 6. Remediation
 Implement Authorization Checks: The backend must explicitly verify that $_SESSION['usertype_id'] == 1 before allowing any role modification operations.
 
 Prevent Mass Assignment: Separate the "Update Profile" feature for regular users from the "Manage Users" feature for Admins. Do not accept the usertype_id parameter in standard profile updates.
 
-7. Disclosure Timeline
+## 7. Disclosure Timeline
 [Sep 08, 2026]: Vulnerability discovered.
 
 [Sep 08, 2026]: Vendor contact information could not be found (No email, no public repository, unreachable). Public disclosure and MITRE CVE request submitted immediately.
