@@ -38,7 +38,7 @@ Step 1: Log in to the application as a standard, low-privileged user (e.g., Stud
 Step 2: Intercept the web traffic using a proxy tool like Burp Suite, or use cURL to send a crafted HTTP POST request to the administrative API endpoint. Inject usertype_id=1 into the body.
 
 Malicious HTTP Request:
-Malicious HTTP Request:
+
 
 ```http
 POST /reviewer/system/system/admins/manage/users/btn_functions.php HTTP/1.1
@@ -67,6 +67,7 @@ Step 4: Refresh your browser. Your account role has now been successfully escala
 <img width="922" height="780" alt="Screenshot_33" src="https://github.com/user-attachments/assets/96955d5a-f70a-4b20-afc8-02a7b789e3cb" />
 
 - Dashboard Admin Access :
+
 Before 
 <img width="1919" height="559" alt="Screenshot_31" src="https://github.com/user-attachments/assets/e3437c55-3ad9-42e3-97da-2efb8eadd6e2" />
 After :
