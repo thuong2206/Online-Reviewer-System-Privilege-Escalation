@@ -2,7 +2,7 @@
 
 ## 1. Vulnerability Summary
 - **Vulnerability Type:** Privilege Escalation / Broken Access Control / Mass Assignment
-- **Vendor:** Fabian Ros
+- **Vendor:** Fabian Ros (Code-Projects)
 - **Product:** Online Reviewer System in PHP
 - **Version:** v1.0
 - **Software Link:** [(https://code-projects.org/online-reviewer-system-in-php-with-source-code/)](https://code-projects.org/online-reviewer-system-in-php-with-source-code/)
@@ -34,10 +34,10 @@ if(isset($_REQUEST['btnUpdateUser'])){
 ## 4. Proof of Concept (PoC)
 To reproduce the vulnerability, follow these steps:
 
-Step 1: Log in to the application as a standard, low-privileged user (e.g., Student). Note your current session cookie (PHPSESSID).
+### Step 1: Log in to the application as a standard, low-privileged user (e.g., Student). Note your current session cookie (PHPSESSID).
 > **Important Session Note:** Each user account must have its own distinct session. Ensure you use an **Incognito / Private window** or log out completely before switching accounts to capture a **different, unique `PHPSESSID`** for the target account. Do not reuse the same session cookie across multiple accounts, as separate accounts must have independent cookies.
 
-Step 2: Intercept the web traffic using a proxy tool like Burp Suite, or use cURL to send a crafted HTTP POST request to the administrative API endpoint. Inject usertype_id=1 into the body.
+### Step 2: Intercept the web traffic using a proxy tool like Burp Suite, or use cURL to send a crafted HTTP POST request to the administrative API endpoint. Inject usertype_id=1 into the body.
 
 Malicious HTTP Request:
 
@@ -61,9 +61,9 @@ Priority: u=0, i
 usertype_id=1&firstname=[NEW_FIRSTNAME]&middlename=[NEW_MIDDLENAME]&lastname=[NEW_LASTNAME]&username=[NEW_USERNAME]&password=[NEW_PASSWORD]&btnUpdateUser=Save+changes
 ```
 
-Step 3: Send the request. The server will process the update and redirect you.
+### Step 3: Send the request. The server will process the update and redirect you.
 
-Step 4: Refresh your browser. Your account role has now been successfully escalated to Administrator, granting you full control over the system's backend (managing exams, modifying other users, etc.).
+### Step 4: Refresh your browser. Your account role has now been successfully escalated to Administrator, granting you full control over the system's backend (managing exams, modifying other users, etc.).
 - Image of request & response:
 <img width="918" height="517" alt="Screenshot_34" src="https://github.com/user-attachments/assets/8e4e33b2-ecb8-4da5-8530-897727683eb3" />
 <img width="921" height="597" alt="Screenshot_35" src="https://github.com/user-attachments/assets/b3763267-3708-41a6-83e0-87213aecd8e8" />
