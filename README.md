@@ -71,9 +71,12 @@ usertype_id=1&firstname=[NEW_FIRSTNAME]&middlename=[NEW_MIDDLENAME]&lastname=[NE
 
 - Dashboard Admin Access :
 
-Before :
-<img width="1919" height="559" alt="Screenshot_31" src="https://github.com/user-attachments/assets/e3437c55-3ad9-42e3-97da-2efb8eadd6e2" />
-After :
+Before with `Username : micheal `
+
+<img width="1917" height="448" alt="Screenshot_38" src="https://github.com/user-attachments/assets/4a85e2c3-3ef3-45a0-9020-681e5cbf6a23" />
+
+After with `Username : micheal ` 
+
 <img width="1918" height="487" alt="Screenshot_36" src="https://github.com/user-attachments/assets/0866e38b-63ef-4b60-81f2-9f49fa8e8605" />
 
 
